@@ -1,37 +1,19 @@
-function initTabNav() {
-  const tabMenu = document.querySelectorAll(".js-tabmenu li");
-  const tabContent = document.querySelectorAll(".js-tabcontent section");
-  tabContent[0].classList.add("ativo");
-
-  if (tabContent.length && tabMenu.length) {
-    function activeTab(index) {
-      tabContent.forEach((item) => {
-        item.classList.remove("ativo");
-      });
-      tabContent[index].classList.add("ativo");
-    }
-
-    tabMenu.forEach((item, index) => {
-      item.addEventListener("click", () => {
-        activeTab(index);
-      });
-    });
-  }
-}
-initTabNav();
 function initAccordion() {
-  const accordionList = document.querySelectorAll(".js-accordion dt");
-  if (accordionList.length) {
-    accordionList[0].classList.toggle("ativo");
-    accordionList[0].nextElementSibling.classList.toggle("ativo");
-
-    function activeAccordion() {
-      this.classList.toggle("ativo");
-      this.nextElementSibling.classList.toggle("ativo");
-    }
-    accordionList.forEach((item) => {
-      item.addEventListener("click", activeAccordion);
-    });
+  const accordin = document.querySelectorAll(".js-accordion dt");
+  if (accordin.length) {
   }
+  accordin[0].classList.add("ativo");
+  accordin[0].nextElementSibling.classList.add("ativo");
+  // ]
+
+  function accordinList() {
+    this.nextElementSibling.classList.toggle("ativo");
+    this.classList.toggle("ativo");
+  }
+
+  accordin.forEach((item) => {
+    item.addEventListener("click", accordinList);
+  });
 }
+
 initAccordion();

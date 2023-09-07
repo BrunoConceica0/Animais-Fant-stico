@@ -1,18 +1,21 @@
-const tabMenu = document.querySelectorAll(".js-tabmenu li");
-const tabContent = document.querySelectorAll(".js-tabcontent section");
-tabContent[0].classList.add("ativo");
+function initTabNav() {
+  const tabContent = document.querySelectorAll(".js-tabcontent section");
+  const tabMenu = document.querySelectorAll(".js-tabmenu li");
+  if (tabContent.length && tabMenu.length) {
+    tabContent[0].classList.add("ativo");
 
-if (tabContent.length && tabMenu.length) {
-  function activeTab(index) {
-    tabContent.forEach((item) => {
-      item.classList.remove("ativo");
+    function activeTab(index) {
+      tabContent.forEach((section) => {
+        section.classList.remove("ativo");
+      });
+      tabContent[index].classList.add("ativo");
+    }
+
+    tabMenu.forEach((item, index) => {
+      item.addEventListener("click", () => {
+        activeTab(index);
+      });
     });
-    tabContent[index].classList.add("ativo");
   }
-
-  tabMenu.forEach((item, index) => {
-    item.addEventListener("click", () => {
-      activeTab(index);
-    });
-  });
 }
+initTabNav();
