@@ -1,5 +1,5 @@
-function initAccordion() {
-  const accordin = document.querySelectorAll(".js-accordion dt");
+export default function initAccordion() {
+  const accordin = document.querySelectorAll(" [data-anime='acction'] dt");
   if (accordin.length) {
   }
   accordin[0].classList.add("ativo");
@@ -15,5 +15,3 @@ function initAccordion() {
     item.addEventListener("click", accordinList);
   });
 }
-
-initAccordion();

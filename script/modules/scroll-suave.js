@@ -1,5 +1,7 @@
-function initScrollSuave() {
-  const linksInternos = document.querySelectorAll(".js-menu a[href^='#']");
+export default function initScrollSuave() {
+  const linksInternos = document.querySelectorAll(
+    "[data-menu='suave'] a[href^='#']"
+  );
   if (linksInternos.length) {
     function scrollSuave(event) {
       event.preventDefault();
@@ -10,12 +12,9 @@ function initScrollSuave() {
         top: topo,
         behavior: "smooth",
       });
-
-      console.log(sectionHref);
     }
     linksInternos.forEach((link) => {
       link.addEventListener("click", scrollSuave);
     });
   }
 }
-initScrollSuave();
