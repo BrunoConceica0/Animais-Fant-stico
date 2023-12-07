@@ -5,6 +5,8 @@ import initScrollSuave from "./modules/scroll-suave.js";
 import iniTabNav from "./modules/navegacao-por-tab.js";
 import initAccordion from "./modules/accordionList.js";
 import initAnimacaoScroll from "./modules/animacaoAoScroll.js";
+import inintFetchAnimais from "./modules/fetch-animais.js";
+import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 initModal();
 initTooltip();
@@ -13,3 +15,5 @@ initScrollSuave();
 iniTabNav();
 initAccordion();
 initAnimacaoScroll();
+inintFetchAnimais();
+initFetchBitcoin();

@@ -1,0 +1,39 @@
+.numero-grid {
+  max-width: 300px;
+  gap: 20px;
+}
+.texto {
+  font-family: "Playfair Display SC", georgia;
+  line-height: 1.2;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.numero-detalhe {
+  font-family: "Playfair Display SC", georgia;
+  display: block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  color: #e54;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.numero-grid {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 700px) {
+  .numero-grid {
+    grid-column: 1;
+    gap: 40px;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .numero-detalhe {
+    font-size: 1.5rem;
+  }
+}
