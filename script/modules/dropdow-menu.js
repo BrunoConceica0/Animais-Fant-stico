@@ -1,5 +1,17 @@
 export default function inintDropDowMenu() {}
 const dropDownMenu = document.querySelectorAll("[data-dropdown]");
+function outisideClick(element, event, callback) {
+  const html = document.documentElement;
+  const outside = "data-outside";
+  if (!element.hasAttribute(outside, "")) {
+    event.forEach((userEvent) => {
+      html.removeEventListener(userEvent, handleOutsideClick);
+    });
+    html.addEventListener("click", handleOutsideClick);
+    element.setAttribute(outside, "");
+  }
+}
+
 function handleClick(event) {
   event.preventDefault(); // prevene que ao click acontece alguam coisa
   this.classList.add("active"); // acitve é do css para dar display:block; no submenu
@@ -14,22 +26,3 @@ dropDownMenu.forEach((menu) => {
     menu.addEventListener(userEvent, handleClick);
   });
 });
-
-function outisideClick(element, event, callback) {
-  const html = document.documentElement;
-  const outside = "data-outside";
-  if (!element.hasAttribute(outside, "")) {
-    event.forEach((userEvent) => {
-      html.removeEventListener(userEvent, handleOutsideClick);
-    });
-    html.addEventListener("click", handleOutsideClick);
-    element.setAttribute(outside, "");
-  }
-
-  function handleOutsideClick(event) {
-    if (!element.contains(event.target)) {
-      html.removeEventListener("click", handleClick);
-      callback();
-    }
-  }
-}

@@ -1,6 +1,12 @@
 import initNumero from "./numero.js";
 export default function inintFetchAnimais() {
   const urlAnimais = "./animais.json";
+  function createrAnimal(animal) {
+    const div = document.createElement("div");
+    div.classList.add(".numero-animal");
+    div.innerHTML = `<h3 class="texto">${animal.especie}</h3><span class="numero-detalhe" data-numero>${animal.total}</span>`;
+    return div;
+  }
 
   async function fetchAnimais(url) {
     try {
@@ -18,11 +24,4 @@ export default function inintFetchAnimais() {
   }
 
   fetchAnimais(urlAnimais);
-
-  function createrAnimal(animal) {
-    const div = document.createElement("div");
-    div.classList.add(".numero-animal");
-    div.innerHTML = `<h3 class="texto">${animal.especie}</h3><span class="numero-detalhe" data-numero>${animal.total}</span>`;
-    return div;
-  }
 }

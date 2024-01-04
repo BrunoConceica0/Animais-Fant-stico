@@ -17,3 +17,5 @@ initAccordion();
 initAnimacaoScroll();
 inintFetchAnimais();
 initFetchBitcoin();
+import $ from "jquery";
+import _ from "lodash";
