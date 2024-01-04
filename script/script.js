@@ -1,21 +1,21 @@
 import initModal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import inintDropDowMenu from "./modules/dropdow-menu.js";
-import initScrollSuave from "./modules/scroll-suave.js";
+import ScrollSuave from "./modules/scroll-suave.js";
 import iniTabNav from "./modules/navegacao-por-tab.js";
 import initAccordion from "./modules/accordionList.js";
 import initAnimacaoScroll from "./modules/animacaoAoScroll.js";
 import inintFetchAnimais from "./modules/fetch-animais.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
+const scrollSauve = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
+scrollSauve.init();
 initModal();
 initTooltip();
 inintDropDowMenu();
-initScrollSuave();
 iniTabNav();
 initAccordion();
 initAnimacaoScroll();
 inintFetchAnimais();
 initFetchBitcoin();
-import $ from "jquery";
-import _ from "lodash";
+// import $ from "jquery";
