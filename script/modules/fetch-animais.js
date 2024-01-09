@@ -1,9 +1,9 @@
-import initNumero from "./numero.js";
+import AnimaNumero from "./numero.js";
 export default function inintFetchAnimais() {
   const urlAnimais = "./animais.json";
   function createrAnimal(animal) {
     const div = document.createElement("div");
-    div.classList.add(".numero-animal");
+    div.classList.add("numero-animal");
     div.innerHTML = `<h3 class="texto">${animal.especie}</h3><span class="numero-detalhe" data-numero>${animal.total}</span>`;
     return div;
   }
@@ -17,7 +17,8 @@ export default function inintFetchAnimais() {
         const divAnimal = createrAnimal(animal);
         numeroGrid.appendChild(divAnimal);
       });
-      initNumero();
+      const animaNumero = new AnimaNumero();
+      animaNumero.init();
     } catch {
       console.log(Error("Algum coisa deu errado!"));
     }
