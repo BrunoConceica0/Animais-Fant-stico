@@ -22,5 +22,6 @@ export default class Accordion {
       // adicionar o primeiro item
       this.togleAccordion(this.accordinList[0]);
     }
+    return this;
   }
 }
