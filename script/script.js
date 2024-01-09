@@ -1,5 +1,5 @@
 import Modal from "./modules/modal.js";
-import initTooltip from "./modules/tooltip.js";
+import Tooltip from "./modules/tooltip.js";
 import inintDropDowMenu from "./modules/dropdow-menu.js";
 import ScrollSuave from "./modules/scroll-suave.js";
 import TabNav from "./modules/navegacao-por-tab.js";
@@ -20,12 +20,15 @@ const modal = new Modal(
   "[data-modal='container']"
 );
 
+const tooltip = new Tooltip("[data-tooltip]");
+
+tooltip.init();
 modal.init();
+tooltip.init();
 tabNav.init();
 scrollSauve.init();
 accordion.init();
 
-initTooltip();
 inintDropDowMenu();
 initAnimacaoScroll();
 inintFetchAnimais();
