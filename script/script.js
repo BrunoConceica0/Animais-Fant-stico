@@ -1,4 +1,4 @@
-import initModal from "./modules/modal.js";
+import Modal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import inintDropDowMenu from "./modules/dropdow-menu.js";
 import ScrollSuave from "./modules/scroll-suave.js";
@@ -10,14 +10,21 @@ import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 const scrollSauve = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 const accordion = new Accordion(" [data-anime='acction'] dt");
-scrollSauve.init();
-accordion.init();
 const tabNav = new TabNav(
   "[data-tab='content'] section",
   "[data-tab='menu'] li"
 );
+const modal = new Modal(
+  "[data-modal='abrir']",
+  "[data-modal='fechar']",
+  "[data-modal='container']"
+);
+
+modal.init();
 tabNav.init();
-initModal();
+scrollSauve.init();
+accordion.init();
+
 initTooltip();
 inintDropDowMenu();
 initAnimacaoScroll();
