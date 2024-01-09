@@ -1,24 +1,41 @@
-export default function initModal() {
-  const fechar = document.querySelector("[data-modal='fechar']");
-  const containerModal = document.querySelector("[data-modal='container']");
-  const abrir = document.querySelector("[data-modal='abrir']");
-  if (fechar && abrir && containerModal) {
-    function abrirModal(event) {
-      event.preventDefault();
-      containerModal.classList.toggle("ativo");
-    }
-    abrir.addEventListener("click", abrirModal);
+export default class Modal {
+  constructor(abrir, fechar, containerModal) {
+    this.abrir = document.querySelector(abrir);
+    this.fechar = document.querySelector(fechar);
+    this.containerModal = document.querySelector(containerModal);
+    //  bind  this ao callback para fazer referencia ao objeto da classe
+    this.eventToggoleModal = this.eventToggoleModal.bind(this);
+    this.containerModalClose = this.containerModalClose.bind(this);
+  }
 
-    function fecharModal() {
-      containerModal.classList.remove("ativo");
+  // abri ou fecha o modal
+  abrirModal() {
+    this.containerModal.classList.toggle("ativo");
+  }
+  // adiconar o evento de toggle ao modal
+  eventToggoleModal(event) {
+    event.preventDefault();
+    this.abrirModal();
+  }
+  // fechar o modal
+  fecharModal() {
+    this.containerModal.classList.remove("ativo");
+  }
+  // fechar o modal ao clicar para fora
+  containerModalClose(event) {
+    if (event.target === this.containerModal) {
+      this.fecharModal(event);
     }
-    fechar.addEventListener("click", fecharModal);
-
-    function containerModalClose(event) {
-      if (event.target === this) {
-        fecharModal(event);
-      }
+  }
+  addModalEvent() {
+    this.fechar.addEventListener("click", this.eventToggoleModal);
+    this.abrir.addEventListener("click", this.eventToggoleModal);
+    this.containerModal.addEventListener("click", this.containerModalClose);
+  }
+  init() {
+    if (this.fechar && this.abrir && this.containerModal) {
+      this.addModalEvent();
     }
-    containerModal.addEventListener("click", containerModalClose);
+    return this;
   }
 }
