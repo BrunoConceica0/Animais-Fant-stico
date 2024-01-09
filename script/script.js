@@ -5,7 +5,7 @@ import ScrollSuave from "./modules/scroll-suave.js";
 import TabNav from "./modules/navegacao-por-tab.js";
 import Accordion from "./modules/accordionList.js";
 import initAnimacaoScroll from "./modules/animacaoAoScroll.js";
-import inintFetchAnimais from "./modules/fetch-animais.js";
+import AnimaNumero from "./modules/numero.js";
 import initFetchBitcoin from "./modules/fetch-bitcoin.js";
 
 const scrollSauve = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
@@ -19,9 +19,10 @@ const modal = new Modal(
   "[data-modal='fechar']",
   "[data-modal='container']"
 );
-
 const tooltip = new Tooltip("[data-tooltip]");
+const animaNumero = new AnimaNumero("[data-numero]", ".numero","active");
 
+animaNumero.init();
 tooltip.init();
 modal.init();
 tooltip.init();
@@ -31,6 +32,5 @@ accordion.init();
 
 inintDropDowMenu();
 initAnimacaoScroll();
-inintFetchAnimais();
 initFetchBitcoin();
 // import $ from "jquery";
