@@ -6,7 +6,7 @@ import TabNav from "./modules/navegacao-por-tab.js";
 import Accordion from "./modules/accordionList.js";
 import initAnimacaoScroll from "./modules/animacaoAoScroll.js";
 import AnimaNumero from "./modules/numero.js";
-import initFetchBitcoin from "./modules/fetch-bitcoin.js";
+import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 
 const scrollSauve = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
@@ -34,5 +34,5 @@ accordion.init();
 fetchAnimais("../../animais.json", ".numero-grid");
 inintDropDowMenu();
 initAnimacaoScroll();
-initFetchBitcoin();
+fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 // import $ from "jquery";
