@@ -1,6 +1,6 @@
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
-import inintDropDowMenu from "./modules/dropdow-menu.js";
+import DropDowMenu from "./modules/dropdow-menu.js";
 import ScrollSuave from "./modules/scroll-suave.js";
 import TabNav from "./modules/navegacao-por-tab.js";
 import Accordion from "./modules/accordionList.js";
@@ -25,6 +25,8 @@ const animaNumero = new AnimaNumero("[data-numero]", ".numero", "active");
 
 const animarScroll = new AnimarScroll('[data-anime="scroll"]');
 
+const dropdow = new DropDowMenu("[data-dropdown]");
+dropdow.init();
 animarScroll.init();
 animaNumero.init();
 tooltip.init();
@@ -35,6 +37,5 @@ scrollSauve.init();
 accordion.init();
 
 fetchAnimais("../../animais.json", ".numero-grid");
-inintDropDowMenu();
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 // import $ from "jquery";
