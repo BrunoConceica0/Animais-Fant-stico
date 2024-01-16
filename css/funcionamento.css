@@ -1,0 +1,17 @@
+[data-semana] {
+  display: flex;
+  align-items: center;
+}
+[data-semana]::after {
+  content: "";
+  display: inline-block;
+  border: 2px solid black;
+  background: red;
+  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  margin: 4px;
+}
+[data-semana].open::after {
+  background: green;
+}
