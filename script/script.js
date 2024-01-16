@@ -10,6 +10,8 @@ import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import MenuMobile from "./modules/menu-mobile.js";
 
+import inintFuncionamento from "./modules/funcionamento.js";
+
 const scrollSauve = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 const accordion = new Accordion(" [data-anime='acction'] dt");
 const tabNav = new TabNav(
@@ -45,3 +47,4 @@ accordion.init();
 fetchAnimais("../../animais.json", ".numero-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 // import $ from "jquery";
+inintFuncionamento();
