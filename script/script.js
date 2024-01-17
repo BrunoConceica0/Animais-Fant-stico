@@ -10,7 +10,7 @@ import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import MenuMobile from "./modules/menu-mobile.js";
 
-import inintFuncionamento from "./modules/funcionamento.js";
+import Funcionamento from "./modules/funcionamento.js";
 
 const scrollSauve = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 const accordion = new Accordion(" [data-anime='acction'] dt");
@@ -32,8 +32,10 @@ const menuMobile = new MenuMobile(
   '[data-menu="button"]',
   '[data-menu="lista"]'
 );
-
 menuMobile.init();
+
+const funcionamento = new Funcionamento("[data-semana]", "open");
+funcionamento.init();
 dropdow.init();
 animarScroll.init();
 animaNumero.init();
@@ -47,4 +49,3 @@ accordion.init();
 fetchAnimais("../../animais.json", ".numero-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 // import $ from "jquery";
-inintFuncionamento();
