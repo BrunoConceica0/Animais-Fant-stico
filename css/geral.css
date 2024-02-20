@@ -10,6 +10,11 @@ dl {
   margin: 0px;
   padding: 0px;
 }
+[scr$=".jpg"] {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
 
 img {
   display: block;

@@ -9,6 +9,7 @@ import AnimaNumero from "./modules/numero.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import fetchAnimais from "./modules/fetch-animais.js";
 import MenuMobile from "./modules/menu-mobile.js";
+import SlideNav from "./modules/slide.js";
 
 import Funcionamento from "./modules/funcionamento.js";
 
@@ -48,4 +49,11 @@ accordion.init();
 
 fetchAnimais("../../animais.json", ".numero-grid");
 fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
+
+const slide = new SlideNav(".slide", ".wrapper");
+slide.init();
+slide.changeSlide(0);
+slide.activePrevSlide();
+slide.addControl(".custom-controls");
+
 // import $ from "jquery";
